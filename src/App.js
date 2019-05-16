@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { fetchReservations } from './fetches';
+import { fetchReservations, postNewReservation } from './fetches';
 import ReservationsContainer from './ReservationsContainer';
 import ReservationForm from './ReservationForm';
 
@@ -17,12 +17,18 @@ class App extends Component {
     this.setState({ reservations })
   }
 
+  postNewReservation = async (reservation) => {
+    const result = await postNewReservation(reservation);
+    await console.log(result);
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          < ReservationForm />
+          < ReservationForm 
+            postNewReservation={ this.postNewReservation }/>
         </div>
         <div className='resy-container'>
           < ReservationsContainer 
