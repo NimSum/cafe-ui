@@ -26,7 +26,8 @@ section.reservations-container {
   background-color: hsla(0, 0%, 100%, .5);
   width: 100vw;
   display: flex;
-  height: 50vh;
+  min-width: 350px;
+  flex-wrap: wrap;
 }
 
 article.reservation-card {
@@ -36,4 +37,25 @@ article.reservation-card {
   margin: 20px;
   border-radius: 20px;
   border: 2px solid gray;
+}
+
+form input {
+  height: 30px;
+  font-size: 1.1rem;
+  margin: 5px 10px;
+}
+
+button.submit-btn {
+  margin: 5px 10px;
+  font-size: 1.1rem;
+  height: 30px;
+  width: 300px;
+  color: white;
+  background-color: gray;
+
+}
+
+button.submit-btn:hover {
+  background-color: green;
+  cursor: pointer;
 }

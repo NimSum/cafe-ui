@@ -45,9 +45,10 @@ class ReservationForm extends Component {
           name='number'
           onChange={ this.handleChange } 
           placeholder='Number of Guests'/>
-        <input 
+        <button 
+          className='submit-btn'
           type='submit'
-          value='Make Reservation' />
+          >Make Reservation</button>
       </form>
     )
   }
