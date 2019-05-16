@@ -22,7 +22,7 @@ export const postNewReservation = async (body) => {
   return result.json();
 }
 
-export const cancelReservation = async (id) => {
+export const removeReservation = async (id) => {
   const cancellationUrl = `http://localhost:3001/api/v1/reservations/${ id }`;
   const result = await fetch(cancellationUrl, {
     method: 'DELETE'

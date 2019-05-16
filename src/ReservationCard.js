@@ -1,10 +1,6 @@
 import React from 'react';
 
-export const ReservationCard = ({ reservation }) => {
-  
-  const cancelReservation = () => {
-    console.log(reservation.id)
-  }
+export const ReservationCard = ({ reservation, cancelReservation }) => {
   
   return (
   <article>
@@ -12,7 +8,7 @@ export const ReservationCard = ({ reservation }) => {
     <p>{reservation.date}</p>
     <p>{reservation.time}</p>
     <p>{reservation.number}</p>
-    <button onClick={ cancelReservation }>Cancel</button>
+    <button onClick={ () => cancelReservation(reservation.id) }>Cancel</button>
   </article>
   )
 }
