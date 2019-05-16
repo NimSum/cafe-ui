@@ -16,9 +16,3 @@ export const ReservationCard = ({ reservation }) => {
   </article>
   )
 }
-
-// "id": 5,
-// "name": "Will",
-// "date": "5/15",
-// "time": "6:30",
-// "number": 2
