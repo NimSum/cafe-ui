@@ -17,7 +17,9 @@ class ReservationForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.postNewReservation(this.state);
+    const { name, date, time, number } = this.state;
+    const condition = (name.length && date.length && time.length && number.length)
+    condition && this.props.postNewReservation(this.state);
   }
 
   render() {
