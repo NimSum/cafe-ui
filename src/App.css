@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
+* {
+  box-sizing: border-box;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -16,4 +20,20 @@
   color: teal;
   font-family: 'Pacifico', cursive;
   font-size: 50px;
+}
+
+section.reservations-container {
+  background-color: hsla(0, 0%, 100%, .5);
+  width: 100vw;
+  display: flex;
+  height: 50vh;
+}
+
+article.reservation-card {
+  background-color: lightgray;
+  width: 30%;
+  height: 250px;
+  margin: 20px;
+  border-radius: 20px;
+  border: 2px solid gray;
 }
