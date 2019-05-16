@@ -26,22 +26,29 @@ class ReservationForm extends Component {
         <input 
           type='text'
           name='name'
-          onChange={ this.handleChange } />
+          onChange={ this.handleChange } 
+          placeholder='Name'/>
         <input 
           type='text'
           name='name'
-          onChange={ this.handleChange } />
+          onChange={ this.handleChange } 
+          placeholder='Date'/>
         <input 
           type='text'
           name='name'
-          onChange={ this.handleChange } />
+          onChange={ this.handleChange } 
+          placeholder='Time'/>
         <input 
           type='text'
           name='name'
-          onChange={ this.handleChange } />
+          onChange={ this.handleChange } 
+          placeholder='Partici'/>
         <input 
-          type='submit'/>
+          type='submit'
+          value='Make Reservation' />
       </form>
     )
   }
 }
+
+export default ReservationForm;
