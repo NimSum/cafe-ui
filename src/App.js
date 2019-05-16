@@ -19,7 +19,8 @@ class App extends Component {
 
   postNewReservation = async (reservation) => {
     const result = await postNewReservation(reservation);
-    await console.log(result);
+    const updatedReservations = [ ...this.state.reservations, result ]
+    await this.setState({ reservations: updatedReservations });
   }
 
   render() {

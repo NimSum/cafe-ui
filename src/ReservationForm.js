@@ -17,7 +17,7 @@ class ReservationForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log('hi')
+    this.props.postNewReservation(this.state);
   }
 
   render() {
