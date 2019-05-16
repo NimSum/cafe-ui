@@ -13,19 +13,31 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const reservations = await fetchReservations();
-    this.setState({ reservations })
+    try{
+      const reservations = await fetchReservations();
+      this.setState({ reservations })
+    } catch(error) {
+      console.log(error)
+    }
   }
 
   postNewReservation = async (reservation) => {
-    const result = await postNewReservation(reservation);
-    const updatedReservations = [ ...this.state.reservations, result ]
-    await this.setState({ reservations: updatedReservations });
+    try {
+      const result = await postNewReservation(reservation);
+      const updatedReservations = [ ...this.state.reservations, result ]
+      await this.setState({ reservations: updatedReservations });
+    } catch(error) {
+      console.log(error)
+    }
   }
 
   cancelReservation = async (reservationId) => {
-    const result = await removeReservation(reservationId);
-    await this.setState({ reservations: result });
+    try {
+      const result = await removeReservation(reservationId);
+      await this.setState({ reservations: result });
+    } catch(error) {
+      console.log(error)
+    }
   }
 
   render() {
