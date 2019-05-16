@@ -8,7 +8,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      reservations: []
+      reservations: [],
+      error: ''
     }
   }
 
@@ -17,7 +18,7 @@ class App extends Component {
       const reservations = await fetchReservations();
       this.setState({ reservations })
     } catch(error) {
-      console.log(error)
+      this.setState({ error: error.message })
     }
   }
 
@@ -27,7 +28,7 @@ class App extends Component {
       const updatedReservations = [ ...this.state.reservations, result ]
       await this.setState({ reservations: updatedReservations });
     } catch(error) {
-      console.log(error)
+      this.setState({ error: error.message })
     }
   }
 
@@ -36,7 +37,7 @@ class App extends Component {
       const result = await removeReservation(reservationId);
       await this.setState({ reservations: result });
     } catch(error) {
-      console.log(error)
+      this.setState({ error: error.message })
     }
   }
 
